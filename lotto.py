@@ -3,7 +3,10 @@ import random
 def main():
     arr=makeArr()
     balls=shuffleBalls()
-    print(balls)
+    for i in range(45):
+        x,y=balls[i]
+        arr[x][y]=i+1
+    printArr(arr)
 
 def shuffleBalls():
     balls=[]
