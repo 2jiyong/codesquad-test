@@ -2,12 +2,15 @@ import random
 
 def main():
     arr=makeArr()
+    balls=shuffleBalls()
+    print(balls)
+
+def shuffleBalls():
     balls=[]
-    # printArr(arr)
     for i in range(45):
         location=randomXY()
         balls.append(location)
-    print(balls)
+    return balls
 
 def randomXY():
     return (random.randint(1,10),random.randint(1,10))
