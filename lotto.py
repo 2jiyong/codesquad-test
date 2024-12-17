@@ -6,11 +6,11 @@ def main():
     while len(winningBalls)!=6:
         arr=makeArr()
         balls=shuffleBalls()
-        for i in range(45):
-            if i+1 in winningBalls:
+        for i in range(1,46):
+            if i in winningBalls:
                 continue
-            x,y=balls[i]
-            arr[x][y]=i+1
+            x,y=balls[i-1]
+            arr[x][y]=i
         printArr(arr)
         if checkingWinnigBall(arr):
             num=arr[9][9]
@@ -23,12 +23,17 @@ def checkingWinnigBall(arr):
     return True
 
 def shuffleBalls():
-    balls=set()
+    # balls=set()
+    ballslist=[]
     while True:
         location=randomXY()
-        balls.add(location)
-        if len(balls)==45:
-            return list(balls)
+        if location not in ballslist:
+            ballslist.append(location)
+        if len(ballslist)==45:
+            return ballslist
+        # balls.add(location)
+        # if len(balls)==45:
+        #     return list(balls)
 
 def randomXY():
     return (random.randint(0,9),random.randint(0,9))
