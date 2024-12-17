@@ -21,7 +21,15 @@ def randomXY():
 def printArr(arr):
     for elems in arr:
         for elem in elems:
-            print(elem,end='')
+            if not elem == ' ' and elem!='-' and elem!='+' and elem!='|':
+                print(f'[{elem:2}]',end='')
+            elif elem != ' ':
+                if elem == '-':
+                    print(elem*4,end='')
+                else:
+                    print(elem,end='')
+            else:
+                print('    ',end='')
         print()
         
 def makeArr():
