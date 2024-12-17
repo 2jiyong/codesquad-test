@@ -10,7 +10,7 @@ def main():
     print(balls)
 
 def randomXY():
-    return (random.randint(1,45),random.randint(1,45))
+    return (random.randint(1,10),random.randint(1,10))
 
 def printArr(arr):
     for elems in arr:
