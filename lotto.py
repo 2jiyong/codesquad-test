@@ -9,11 +9,12 @@ def main():
     printArr(arr)
 
 def shuffleBalls():
-    balls=[]
-    for i in range(45):
+    balls=set()
+    while True:
         location=randomXY()
-        balls.append(location)
-    return balls
+        balls.add(location)
+        if len(balls)==45:
+            return list(balls)
 
 def randomXY():
     return (random.randint(0,9),random.randint(0,9))
