@@ -1,20 +1,21 @@
 import random
 
 def main():
-    arr=makeArr()
-    balls=shuffleBalls()
+    # arr=makeArr()
     winningBalls=[]
-    for i in range(45):
-        if i in winningBalls:
-            continue
-        x,y=balls[i]
-        arr[x][y]=i+1
-    printArr(arr)
-    if checkingWinnigBall(arr):
-        num=arr[9][9]
-        winningBalls.append(num)
-    print(winningBalls)
-
+    while len(winningBalls)!=6:
+        arr=makeArr()
+        balls=shuffleBalls()
+        for i in range(45):
+            if i+1 in winningBalls:
+                continue
+            x,y=balls[i]
+            arr[x][y]=i+1
+        printArr(arr)
+        if checkingWinnigBall(arr):
+            num=arr[9][9]
+            winningBalls.append(num)
+        print(winningBalls)
 
 def checkingWinnigBall(arr):
     if arr[9][9]==' ':
