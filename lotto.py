@@ -10,12 +10,12 @@ def main():
             if i in winningBalls:
                 continue
             x,y=balls[i-1]
-            arr[x][y]=i
-        printArr(arr)
+            arr[x][y]=i  
         if checkingWinnigBall(arr):
+            printArr(arr)
             num=arr[9][9]
             winningBalls.append(num)
-        print(winningBalls)
+            print(winningBalls)
 
 def checkingWinnigBall(arr):
     if arr[9][9]==' ':
