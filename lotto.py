@@ -16,32 +16,22 @@ def shuffleBalls():
     return balls
 
 def randomXY():
-    return (random.randint(1,10),random.randint(1,10))
+    return (random.randint(0,9),random.randint(0,9))
 
 def printArr(arr):
+    print('+'+'-'*40+'+')
     for elems in arr:
+        print('|',end='')
         for elem in elems:
-            if not elem == ' ' and elem!='-' and elem!='+' and elem!='|':
+            if not elem == ' ':
                 print(f'[{elem:2}]',end='')
-            elif elem != ' ':
-                if elem == '-':
-                    print(elem*4,end='')
-                else:
-                    print(elem,end='')
             else:
                 print('    ',end='')
-        print()
-        
+        print('|')
+    print('+'+'-'*40+'+')
+    
 def makeArr():
-    arr=[[' ']*12 for _ in range(12)]
-    for i in range(12):
-        for j in range(12):
-            if i==0 or i==11:
-                arr[i][j]='-'
-            if j==0 or j==11:
-                arr[i][j]='|'
-            if (i==0 or i==11) and (j==0 or j==11):
-                arr[i][j]='+' 
+    arr=[[' ']*10 for _ in range(10)]
     return arr
 
 if __name__ == '__main__':
