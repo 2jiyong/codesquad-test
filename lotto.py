@@ -3,10 +3,23 @@ import random
 def main():
     arr=makeArr()
     balls=shuffleBalls()
+    winningBalls=[]
     for i in range(45):
+        if i in winningBalls:
+            continue
         x,y=balls[i]
         arr[x][y]=i+1
     printArr(arr)
+    if checkingWinnigBall(arr):
+        num=arr[9][9]
+        winningBalls.append(num)
+    print(winningBalls)
+
+
+def checkingWinnigBall(arr):
+    if arr[9][9]==' ':
+        return False
+    return True
 
 def shuffleBalls():
     balls=set()
