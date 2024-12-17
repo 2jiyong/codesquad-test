@@ -1,6 +1,13 @@
+import random
+
 def main():
     arr=makeArr()
     printArr(arr)
+    a,b=randomXY()
+    print(a,b)
+    
+def randomXY():
+    return (random.randint(1,45),random.randint(1,45))
 
 def printArr(arr):
     for elems in arr:
